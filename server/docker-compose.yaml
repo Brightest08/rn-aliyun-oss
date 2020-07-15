@@ -1,0 +1,22 @@
+version: "2.2"
+services:
+  oss:
+    container_name: rn-aliyun-oss
+    image: registry.cn-hongkong.aliyuncs.com/brightest/rn-aliyun-oss
+    #entrypoint: tail -f /dev/null
+    environment:
+      # 请填写您的AccessKeyId。
+      - ACCESS_KEY_ID=AccessKeyId
+      # 请填写您的AccessKeySecret
+      - ACCESS_KEY_SECRET=AccessKeySecret
+      # host的格式为 bucketname.endpoint ，请替换为您的真实信息
+      - HOST=bucketname.endpoint
+      # callback_url为 上传回调服务器的URL，请将下面的IP和Port配置为您自己的真实信息
+      - CALLBACK_URL=
+      # 生成token的有效期
+      - EXPIRE_TIME=60
+      # 用户上传文件时指定的前缀
+      - UPLOAD_DIR=data
+    ports:
+      - "8888:80"
+    restart: on-failure
