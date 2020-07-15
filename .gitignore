@@ -9,7 +9,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 client/demo/node_modules
-build/
 develop-eggs/
 dist/
 downloads/
